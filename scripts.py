@@ -3,7 +3,6 @@ import json
 import requests
 from abc import ABC, abstractmethod
 import pandas as pd
-import logging
 from datetime import datetime
 
 import os
@@ -15,25 +14,7 @@ django.setup()
 from api.models import (
     Producao,Processamento,Comercializacao,Importacao,Exportacao,Atualizacao)
 
-date_format = "%Y-%m-%d %H:%M:%S"
-log_format = "%(asctime)s - %(filename)s:%(lineno)d - [%(funcName)s] - %(levelname)s - %(message)s"
 
-logger = logging.getLogger("logger")
-logger.setLevel(logging.DEBUG)  
-
-file_handler = logging.FileHandler(f"log_{datetime.now().strftime('%Y%m%d')}.log")
-file_handler.setLevel(logging.DEBUG) 
-
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)  
-
-formatter = logging.Formatter(log_format, datefmt=date_format)
-file_handler.setFormatter(formatter)
-console_handler.setFormatter(formatter)
-
-
-logger.addHandler(file_handler)
-logger.addHandler(console_handler)
 
 class Pipeline(ABC):
     """Essa é a 'interface' para os Pipelines. Todas as classes que a implementão terão
@@ -137,13 +118,13 @@ class DefaultEmbrapaPipeline(EmbrapaPipeline):
                 #busca onde está salvo o csv
                     dst_file = sources[handler.__name__.replace("handle_","")]['dst_file']
                     #executa o handler passando o diretório do CSV.
-                    logger.info(f'[handle_producao] Init. {handler.__name__.replace("handle_","")}')
+                    print(f'[handle_producao] Init. {handler.__name__.replace("handle_","")}')
                     handler(dst_file,atualizacao)
-                    logger.info(f'[handle_producao] Fim. {handler.__name__.replace("handle_","")}')
+                    print(f'[handle_producao] Fim. {handler.__name__.replace("handle_","")}')
                 atualizacao.status = "SUCESSO"
                 atualizacao.save()
             except Exception as ex:
-                logger.error(f"Erro inesperado: {ex}")
+                print(f"Erro inesperado: {ex}")
                 atualizacao.status = "ERRO"
                 atualizacao.save()
                 raise Exception from ex
@@ -721,19 +702,19 @@ class DefaultEmbrapaPipeline(EmbrapaPipeline):
                 #prod_file define onde será salvo o arquivo csv
                 prod_file = sources[source]['dst_file']
 
-                logger.info(f"File {prod_file} download started")
+                print(f"File {prod_file} download started")
                 #Utiliza a lib requests para buscar o conteudo csv
                 content = requests.get(url).content
-                logger.info(f"File {prod_file} download finished")
+                print(f"File {prod_file} download finished")
 
                 #salva o arquivo no diretorio informado por prod_file
                 with open(prod_file,"wb") as csv_file:
                     csv_file.write(content)
-                    logger.info(f"File {prod_file} successfully saved")
+                    print(f"File {prod_file} successfully saved")
 
             #Caso ocorra algum erro ao salvar o arquivo, este é informado.
             except Exception as ex:
-                logger.error(f"Unexpected Error: {ex}")
+                print(f"Unexpected Error: {ex}")
 
 def run(atualizacao):
     with open("sources.json") as f:
