@@ -1,5 +1,5 @@
-Django==5.1
-djangorestframework==3.15.2
-drf-spectacular==0.27.2
-pandas==1.5.0
+Django
+djangorestframework
+drf-spectacular
+pandas
 requests
