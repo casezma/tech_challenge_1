@@ -107,7 +107,7 @@ class DefaultEmbrapaPipeline(EmbrapaPipeline):
         Com essas garantias no arquivo de entrada, teremos uma implementação mais limpa do método run;
         """
         #Executa o download atualizado de todos os arquivos conforme as especificações de URL que constam no sources.json
-        #self.downloader(sources)
+        self.downloader(sources)
         
         #busca por todos os métodos handler que estão em sources.json.
         handlers = [self.__getattribute__(f"handle_{x}") for x in sources]
