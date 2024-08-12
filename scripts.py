@@ -693,6 +693,8 @@ class DefaultEmbrapaPipeline(EmbrapaPipeline):
         """O objetivo deste método é realizar o download das fontes de dados do Emprapa
         para o cache."""
         
+        if not os.path.exists("./cache"):
+            os.makedirs("./cache")
         
         #percorre todas as chaves do json cuja a chave é sources
         for source in sources.keys():
