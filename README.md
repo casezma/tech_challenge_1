@@ -1,1 +1,5 @@
-# tech_challenge_rm357944
+#Objetivo do projeto
+
+#Endpoint API
+
+/consulta?q=producao,processamento,comercializacao

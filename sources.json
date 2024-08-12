@@ -1,0 +1,111 @@
+
+{
+    "sources":
+        {
+            "producao":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/Producao.csv",
+                "dst_file":"cache/producao.csv",
+                "test_file":"test_data/producao.csv",
+                "prod_table":"Producao",
+                "handler":"handle_producao"
+            },
+            "processamento_viniferas":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaViniferas.csv",
+                "dst_file":"cache/processamento_viniferas.csv",
+                "test_file":"test_data/processamento_viniferas.csv",
+                "prod_table":"Processamento",
+                "handler":"handle_processamento_viniferas"
+            },
+            "processamento_americanas":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaAmericanas.csv",
+                "dst_file": "cache/processamento_americanas.csv",
+                "test_file":"test_data/processamento_americanas.csv",
+                "prod_table": "Processamento",
+                "handler": "handle_processamento_americanas"
+            },
+            "processamento_mesa":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaMesa.csv",
+                "dst_file": "cache/processamento_mesa.csv",
+                "test_file":"test_data/processamento_mesa.csv",
+                "prod_table": "Processamento",
+                "handler": "handle_processamento_mesa"
+            },
+            "processamento_sem_classificacao":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaSemclass.csv",
+                "dst_file": "cache/processamento_sem_classificacao.csv",
+                "test_file":"test_data/processamento_sem_classificacao.csv",
+                "prod_table": "Processamento",
+                "handler": "handle_processamento_sem_classificacao"
+            },
+            "comercializacao":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/Comercio.csv",
+                "dst_file": "cache/comercializacao.csv",
+                "test_file":"test_data/comercializacao.csv",
+                "prod_table": "Comercializacao",
+                "handler": "handle_comercializacao"
+            },
+            "importacao_vinhos_de_mesa":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ImpVinhos.csv",
+                "dst_file": "cache/importacao_vinhos_de_mesa.csv",
+                "test_file":"test_data/importacao_vinhos_de_mesa.csv",
+                "prod_table": "Importacao",
+                "handler": "handle_importacao_vinhos_de_mesa"
+            },
+            "importacao_espumantes": {
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ImpEspumantes.csv",
+                "dst_file":"cache/importacao_espumantes.csv",
+                "test_file":"test_data/importacao_espumantes.csv",
+                "prod_table":"Importacao",
+                "handler": "handle_importacao_espumantes"
+            },
+            "importacao_uvas_frescas":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ImpFrescas.csv",
+                "dst_file": "cache/importacao_uvas_frescas.csv",
+                "test_file":"test_data/importacao_uvas_frescas.csv",
+                "prod_table": "Importacao",
+                "handler": "handle_importacao_uvas_frescas"
+            },
+            "importacao_uvas_passas":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ImpPassas.csv",
+                "dst_file":"cache/importacao_uvas_passas.csv",
+                "test_file":"test_data/importacao_uvas_passas.csv",
+                "prod_table":"Importacao",
+                "handler":"handle_importacao_uva_passas"
+            },
+            "importacao_suco_de_uva":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ImpSuco.csv",
+                "dst_file":"cache/importacao_suco_de_uva.csv",
+                "test_file":"test_data/importacao_suco_de_uva.csv",
+                "prod_table":"Importacao",
+                "handler":"handle_importacao_suco_de_uva"
+            },
+            "exportacao_vinhos_de_mesa":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ExpVinho.csv",
+                "dst_file":"cache/exportacao_vinhos_de_mesa.csv",
+                "test_file":"test_data/exportacao_vinhos_de_mesa.csv",
+                "prod_table":"Exportacao",
+                "handler":"handle_exportacao_vinhos_de_mesa"
+            },
+            "exportacao_espumantes":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ExpEspumantes.csv",
+                "dst_file":"cache/exportacao_espumantes.csv",
+                "test_file":"test_data/exportacao_espumantes.csv",
+                "prod_table":"Exportacao",
+                "handler":"handle_exportacao_espumantes"
+            },
+            "exportacao_uvas_frescas":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ExpUva.csv",
+                "dst_file":"cache/exportacao_uvas_frescas.csv",
+                "test_file":"test_data/exportacao_uvas_frescas.csv",
+                "prod_table":"Exportacao",
+                "handler":"handle_exportacao_uvas_frescas"
+            },
+            "exportacao_suco_de_uva":{
+                "url":"http://vitibrasil.cnpuv.embrapa.br/download/ExpSuco.csv",
+                "dst_file":"cache/exportacao_suco_de_uva.csv",
+                "test_file":"test_data/exportacao_suco_de_uva.csv",
+                "prod_table":"Exportacao",
+                "handler":"handle_exportacao_suco_de_uva"
+            }
+        }
+}
