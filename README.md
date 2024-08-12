@@ -19,5 +19,5 @@ Abaixo está o diagrama com a arquitetura proposta para o Deploy da API
 
 # MVP
 
-
+http://34.31.123.18:8000/api/docs/
 
